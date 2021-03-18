@@ -1,0 +1,1329 @@
+<html>
+  <head>
+    <title>Colbyn's Math Notes
+    </title>
+    <link rel="stylesheet" href="https://colbyn.github.io/school-notes-spring-2020/ss-data/15881435395619956083" ss.link.processed></link><script>
+window.MathJax = {
+    tex: {
+        inlineMath: [['\\(', '\\)'], ['stem:[', ']'], ['`', '`']],
+        macros: {
+            'dx': "{\\, \\mathrm{d}x\\;}",
+            'Integrate': ['{\\int_{#1}^{#2}\\, #3 \\dx}', 3],
+            'IntegrateFor': ['{\\int_{#1}^{#2}\\, #3 {\\, \\mathrm{d}{#4}\\;}}', 4],
+            'I': ['{\\Integrate{a}{b}{#1}}', 1],
+            'angles': ['\\langle {#1},{#2} \\rangle', 2]
+        },
+    },
+    svg: {
+        fontCache: 'global',
+        minScale: 0.2
+    },
+    processEscapes: true,
+};
+</script><script id="MathJax-script" async type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"></link>
+    <meta name="viewport" content="width=device-width,initial-scale=1"></meta>
+    <meta charset="utf-8"></meta><script src="https://www.geogebra.org/apps/deployggb.js"></script><script src="https://www.desmos.com/api/v1.5/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"></link>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"></link>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"></link>
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/joshuarudd/typeset.css/master/typeset.min.css"></link>
+    <style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+    }
+
+    </style>
+  </head>
+  <body>
+    <header id="site-header">
+      <div page-nav>
+        <h1 id="3017956336920993487" toc-ignore>Site Navigation
+        </h1>
+        <ul macro="page-nav">
+          <li><a href="https://colbyn.github.io/school-notes-spring-2020/index.html">Reference (Math)</a>
+            <ul>
+              <li><a href="https://colbyn.github.io/school-notes-spring-2020/reference/chemistry.html">Chemistry</a>
+              </li>
+            </ul>
+          </li>
+          <li><a>Class Notes</a>
+            <ul>
+              <li><a href="https://colbyn.github.io/school-notes-spring-2020/class/chem.html">Chemistry</a>
+              </li>
+              <li><a href="https://colbyn.github.io/school-notes-spring-2020/class/calc.html">Calculus</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div toc>
+        <h1 toc-ignore id="16706298647720695000">Table of Contents
+        </h1>
+        <ul macro="toc">
+          <li for="h1"><a href="#8833992055275389385">Miscellaneous</a>
+          </li>
+          <li for="h2"><a href="#8244068162548435925">Functional Utilities & Notation Conveniences</a>
+          </li>
+          <li for="h3"><a href="#3174740371971285520">Right to Left Evaluation</a>
+          </li>
+          <li for="h3"><a href="#16407590740274152055">Left to Right Evaluation</a>
+          </li>
+          <li for="h3"><a href="#17150792836263631201">Derivative Shorthand</a>
+          </li>
+          <li for="h2"><a href="#18154542094641882025">Radians & Radian Conversion</a>
+          </li>
+          <li for="h3"><a href="#15156856685628360299">Constants</a>
+          </li>
+          <li for="h3"><a href="#10693969533528016580">Conversion</a>
+          </li>
+          <li for="h3"><a href="#9563214249621385003">Notice</a>
+          </li>
+          <li for="h4"><a href="#4264065145467102142">Degree to Radian Conversion Examples</a>
+          </li>
+          <li for="h4"><a href="#17630892031306339577">Going from Tau to Pi</a>
+          </li>
+          <li for="h1"><a href="#10894967041109190960">Algebra</a>
+          </li>
+          <li for="h2"><a href="#18233512322820934584">Properties</a>
+          </li>
+          <li for="h1"><a href="#15655885168551459303">Trigonometry</a>
+          </li>
+          <li for="h2"><a href="#12308005513341842647">Trigonometric Identities and Equations</a>
+          </li>
+          <li for="h3"><a href="#10190989301505861733">Pythagorean Identities</a>
+          </li>
+          <li for="h3"><a href="#1327418488918423823">Sum and Difference Identities</a>
+          </li>
+          <li for="h3"><a href="#9570725035477374822">Cofunction Identities</a>
+          </li>
+          <li for="h3"><a href="#14212021386799853537">Ratio Identities</a>
+          </li>
+          <li for="h3"><a href="#17277843180089213119">Double-Angle Identities</a>
+          </li>
+          <li for="h3"><a href="#16690478475002247912">Half-Angle Identities</a>
+          </li>
+          <li for="h3"><a href="#14181341509066792500">Power-Reducing Identities</a>
+          </li>
+          <li for="h3"><a href="#3873405068954633645">Product-to-Sum Identities</a>
+          </li>
+          <li for="h3"><a href="#12804923929127437086">Sum-to-Product-Identities</a>
+          </li>
+          <li for="h1"><a href="#14510349134696641349">Limits</a>
+          </li>
+          <li for="h2"><a href="#10346731368322095661">L’Hospital’s Rule</a>
+          </li>
+          <li for="h2"><a href="#2539671689892468997">Limit Laws</a>
+          </li>
+          <li for="h2"><a href="#8026888645820366155">Limit Formulas</a>
+          </li>
+          <li for="h2"><a href="#14799266829837659337">Growth Rates</a>
+          </li>
+          <li for="h1"><a href="#12218347638776391369">Calculus</a>
+          </li>
+          <li for="h2"><a href="#14965673189004371283">Derivative Tables</a>
+          </li>
+          <li for="h2"><a href="#13997959368136373590">Integration Tables</a>
+          </li>
+          <li for="h2"><a href="#16739759467061434076">Riemann Sums</a>
+          </li>
+          <li for="h3"><a href="#17211247399661777919">Left Riemann Sum</a>
+          </li>
+          <li for="h3"><a href="#12270568974922804108">Right Riemann Sum</a>
+          </li>
+          <li for="h3"><a href="#554706099432351522">Midpoint Riemann Sum</a>
+          </li>
+          <li for="h3"><a href="#9855445493773158245">Trapezoidal Riemann Sum</a>
+          </li>
+          <li for="h3"><a href="#554714459210936594">Simpson's Rule</a>
+          </li>
+          <li for="h2"><a href="#1123475491895180060">Improper Integrals</a>
+          </li>
+          <li for="h1"><a href="#248711926375195383">Infinite Sequences and Series</a>
+          </li>
+          <li for="h2"><a href="#13154301408868941883">Terminology</a>
+          </li>
+          <li for="h2"><a href="#981834697106483294">Sequence</a>
+          </li>
+          <li for="h3"><a href="#7184424285819996506">Infinite Sequence</a>
+          </li>
+          <li for="h3"><a href="#15638919328177538893">Helpful Theorem</a>
+          </li>
+          <li for="h3"><a href="#11366067073507778249">Example</a>
+          </li>
+          <li for="h3"><a href="#17527065491451581016">Example</a>
+          </li>
+          <li for="h2"><a href="#16572146730572290166">Series</a>
+          </li>
+          <li for="h3"><a href="#13074098412146270989">Infinite Series</a>
+          </li>
+          <li for="h3"><a href="#1836517134334099333">Geometric Series</a>
+          </li>
+          <li for="h3"><a href="#12115473377553556513">The Integral Test</a>
+          </li>
+          <li for="h4"><a href="#11129437154659478751">Constraints on  \([1,n)\)</a>
+          </li>
+          <li for="h3"><a href="#6255659939986994911">P-Series -or- Harmonic Series</a>
+          </li>
+          <li for="h3"><a href="#16843630099204728333">Comparison Test</a>
+          </li>
+          <li for="h3"><a href="#1504073735857569293">Limit Comparison Test</a>
+          </li>
+          <li for="h4"><a href="#10389207624133305217">Warning</a>
+          </li>
+          <li for="h4"><a href="#748577482064616105">Notes</a>
+          </li>
+          <li for="h3"><a href="#8613057751481400992">Estimating Infinite Series</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <h1 toc-ignore root id="4597808296331166099">Colbyn's School Notes
+      </h1>
+      <div boxed macro="note">
+        <h2 toc-ignore id="10506211966273857619">Meta
+        </h2>
+        <ul>
+          <li><a href="https://colbyn.github.io/school-notes-spring-2020/">Online Release</a>
+          </li>
+          <li><a href="http://github.com/colbyn/school-notes-spring-2020">Source Code</a>
+          </li>
+        </ul>
+        <div macro="note">
+          <h3 id="6469370698534094496" toc-ignore>Legacy Notes
+          </h3>
+          <ul>
+            <li><a href="https://colbyn.github.io/subscript/">Original Subscript Implementation (Last Iteration)</a>
+            </li>
+            <li><a href="https://colbyn.github.io/school-notes/">Original School Notes Implementation</a>
+            </li>
+            <li><a href="https://colbyn.github.io/colbyns-math-notes/">Original Math Notes Implementation</a>
+            </li>
+            <li><a href="https://colbyn.github.io/colbyns-calculus-notes/">Original Calculus Notes</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <h1 id="8833992055275389385">Miscellaneous
+      </h1>      <h2 id="8244068162548435925">Functional Utilities & Notation Conveniences
+      </h2>      <div cols="2" macro="layout" columns="2">
+        <div boxed macro="note">
+          <h3 id="3174740371971285520">Right to Left Evaluation
+          </h3>
+          <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+
+            f \triangleleft x &= f(x)
+        
+\end{split}
+\end{equation}$$
+          </div>
+          <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+
+            f \circ g \triangleleft x
+                    &= f(g(x)) \\
+                    &= f \triangleleft g \triangleleft x
+        
+\end{split}
+\end{equation}$$
+          </div>
+        </div>
+        <div boxed macro="note">
+          <h3 id="16407590740274152055">Left to Right Evaluation
+          </h3>
+          <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+            x \triangleright f &= f(x)
+        
+\end{split}
+\end{equation}$$
+          </div>
+        </div>
+        <div boxed macro="note">
+          <h3 id="17150792836263631201">Derivative Shorthand
+          </h3>
+          <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+
+            \delta f(x) &= \frac{\mathrm{d}}{\mathrm{d}x} f(x) = f^\prime(x)
+        
+\end{split}
+\end{equation}$$
+          </div>
+          <p>For this notation, the derivative with respect to a given variable, is implicit.</p>
+        </div>
+      </div>      <h2 id="18154542094641882025">Radians & Radian Conversion
+      </h2>      <div columns="2" macro="layout" cols="2">
+        <div macro="note" boxed>
+          <h3 id="15156856685628360299">Constants
+          </h3>
+          <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+            \tau &= 2\pi = 360^{\circ} \\
+            \pi &= \frac{1}{2}\tau = 180^{\circ}
+        
+\end{split}
+\end{equation}$$
+          </div>
+        </div>
+        <div boxed macro="note">
+          <h3 id="10693969533528016580">Conversion
+          </h3>
+          <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+
+            &\text{given}\\
+            1^{\circ} &= \frac{1}{360} \tau \; {\displaystyle {\text{rad}}} \\
+            1 \; rad &= \frac{1}{\tau} \cdot 360^{\circ}\\\\
+            &\text{therefore}\\
+            x^{\circ} &= \frac{x}{360} \tau \; {\displaystyle {\text{rad}}} \\
+            x \; rad &= \frac{x}{\tau} \cdot 360^{\circ}
+        
+\end{split}
+\end{equation}$$
+          </div>
+        </div>
+      </div>      <div boxed macro="note">
+        <h3 id="9563214249621385003">Notice
+        </h3>
+        <p>Take special note of the above. It essentially gives you a simple relation for conversion.</p>
+        <h4 id="4264065145467102142">Degree to Radian Conversion Examples
+        </h4>
+        <dl>
+          <dt>E.g. #1:
+          </dt>
+          <dd>
+            <p>I can say off the top of my head that <span latex="inline" macro="tex">\(29^\circ\)</span> in radians (in terms of Tau) is <span macro="tex" latex="inline">\(\frac{29}{360}\tau\;\mathrm{rad}\)</span>.</p>
+          </dd>
+          <dt>E.g. #2:
+          </dt>
+          <dd>
+            <p><span latex="inline" macro="tex">\(9^\circ\)</span> in radians is <span macro="tex" latex="inline">\(\frac{9}{360}\tau\;\mathrm{rad}\)</span>  (of course we can should simplify at this point, but the result is valid). Whereas when using <span latex="inline" macro="tex">\(\pi\)</span>, the result is <span latex="inline" macro="tex">\(\frac{1}{20}\pi\;\mathrm{rad}\)</span>.</p>
+          </dd>
+        </dl>
+        <h4 id="17630892031306339577">Going from Tau to Pi
+        </h4>
+        <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+        29^{\circ}
+            &= \frac{29}{360} \tau \; {\displaystyle {\text{rad}}} \\
+            &= \frac{29}{360} (2\pi) \; {\displaystyle {\text{rad}}} \\
+            &= \frac{29}{180} \pi \; {\displaystyle {\text{rad}}}
+    
+\end{split}
+\end{equation}$$
+        </div>
+      </div>      <h1 id="10894967041109190960">Algebra
+      </h1>      <h2 id="18233512322820934584">Properties
+      </h2>      <div macro="layout" columns="3" cols="3">
+        <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+        a^m \cdot b^n &= a^{m+n}\\
+        \left(a^m\right)^n &= a^{m\cdot\,n} = \left(a^n\right)^m\\
+        \left(a\cdot\,b\right)^n &= a^n \cdot b^n\\
+        \left(\frac{a}{b}\right)^{-n} &= \left(\frac{b}{a}\right)^n\\
+        \frac{x^n}{y^n} &= \left(\frac{x}{y}\right)^n\\
+        x^{y^z} &= x^{\left(y ^ z\right)} \neq \left(x^y\right)^z
+    
+\end{split}
+\end{equation}$$
+        </div>
+        <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+        |x| &= \sqrt{x^2} \neq x
+    
+\end{split}
+\end{equation}$$
+        </div>
+        <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+
+        \log_{\beta}(\alpha) &= \gamma\\
+        \beta^{\gamma} &= \alpha\\
+        \beta^{\log_{\beta}(N)} &= N\;\text{for all $N > 0$}\\
+        \log_{\beta}(\beta^x) &= x
+    
+\end{split}
+\end{equation}$$
+        </div>
+      </div>      <h1 id="15655885168551459303">Trigonometry
+      </h1>      <h2 id="12308005513341842647">Trigonometric Identities and Equations
+      </h2>      <div columns="2" macro="layout" cols="2">
+        <div macro="note" boxed>
+          <h3 id="10190989301505861733">Pythagorean Identities
+          </h3>
+          <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+\cos^2(\theta) + \sin^2(\theta) = 1
+\end{split}
+\end{equation}$$
+          </div>
+          <div macro="layout" columns="2" cols="2">
+            <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+            \sec^2(\theta) - \tan^2(\theta) &= 1 \\
+            \sec^2(\theta) &= 1 + \tan^2(\theta)
+        
+\end{split}
+\end{equation}$$
+            </div>
+            <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+            \csc^2(\theta) - \cot^2(\theta) &= 1 \\
+            \csc^2(\theta) &= 1 + \cot^2(\theta)
+        
+\end{split}
+\end{equation}$$
+            </div>
+          </div>
+        </div>        <div boxed macro="note">
+          <h3 id="1327418488918423823">Sum and Difference Identities
+          </h3>
+          <div macro="texblock" latex="block">$$
+         \begin{equation}
+        \begin{split}
+            \cos(\alpha - \beta) &= \cos(\alpha) \cdot \cos(\beta) + \sin(\alpha) \cdot \sin(\beta) \\
+            \cos(\alpha + \beta) &= \cos(\alpha) \cdot \cos(\beta) - \sin(\alpha) \cdot \sin(\beta) \\
+            &\\
+            \sin(\alpha - \beta) &= \sin(\alpha) \cdot \cos(\beta) - \cos(\alpha) \cdot \sin(\beta) \\
+            \sin(\alpha + \beta) &= \sin(\alpha) \cdot \cos(\beta) + \cos(\alpha) \cdot \sin(\beta) \\
+            &\\
+            \tan(\alpha + \beta) &= \frac{\tan(\alpha) + \tan(\beta)}{1 - \tan(\alpha) \cdot \tan(\beta)} \\
+            \tan(\alpha - \beta) &= \frac{\tan(\alpha) - \tan(\beta)}{1 + \tan(\alpha) \cdot \tan(\beta)}
+        \end{split}
+        \end{equation} 
+    $$
+          </div>
+        </div>        <div macro="note" boxed>
+          <h3 id="9570725035477374822">Cofunction Identities
+          </h3>
+          <div cols="2" macro="layout" columns="2">
+            <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+\sin(\theta) = \cos(\frac{1}{4}\tau - \theta)
+\end{split}
+\end{equation}$$
+            </div>
+            <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+\cos(\theta) = \sin(\frac{1}{4}\tau - \theta)
+\end{split}
+\end{equation}$$
+            </div>
+            <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+\tan(\theta) = \cot(\frac{1}{4}\tau - \theta)
+\end{split}
+\end{equation}$$
+            </div>
+            <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+\cot(\theta) = \tan(\frac{1}{4}\tau - \theta)
+\end{split}
+\end{equation}$$
+            </div>
+            <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+\csc(\theta) = \sec(\frac{1}{4}\tau - \theta)
+\end{split}
+\end{equation}$$
+            </div>
+            <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+\sec(\theta) = \csc(\frac{1}{4}\tau - \theta)
+\end{split}
+\end{equation}$$
+            </div>
+          </div>
+        </div>        <div macro="note" boxed>
+          <h3 id="14212021386799853537">Ratio Identities
+          </h3>
+          <div latex="block" macro="texblock">$$
+        \begin{equation}
+        \begin{split}
+            \tan(90^\circ - x) & = \frac{\sin(90^\circ - x)}{\cos(90^\circ - x)} = \frac{\cos(x)}{\sin(x)} = \cot(x) \\
+            \\
+            \cot(90^\circ - x) & = \frac{\cos(90^\circ - x)}{\sin(90^\circ - x)} = \frac{\sin(x)}{\cos(x)} = \tan(x) \\
+        \end{split}
+        \end{equation}
+    $$
+          </div>
+        </div>        <div macro="note" boxed>
+          <h3 id="17277843180089213119">Double-Angle Identities
+          </h3>
+          <div macro="texblock" latex="block">$$
+         \begin{equation}
+        \begin{split}
+            \sin(2\alpha) &= 2\sin(\alpha)\cos(\alpha) \\
+            \cos(2\alpha) &= \cos^2(\alpha) - \sin^2(\alpha) \\
+                        &= 1 - 2\sin^2(\alpha) \\
+                        &= 2\cos^2(\alpha) - 1 \\
+            &\\
+            \tan(2\alpha) &= \frac{2\tan(\alpha)}{1 - \tan^2(\alpha)}
+        \end{split}
+        \end{equation}
+    $$
+          </div>
+        </div>        <div boxed macro="note">
+          <h3 id="16690478475002247912">Half-Angle Identities
+          </h3>
+          <div latex="block" macro="texblock">$$
+         \begin{equation}
+        \begin{split}
+            \sin \frac{\alpha}{2} &= \pm \sqrt{\frac{1 - \cos(\alpha)}{2}} \\
+            \cos \frac{\alpha}{2} &= \pm \sqrt{\frac{1 + \cos(\alpha)}{2}} \\
+            \tan \frac{\alpha}{2} &= \pm \sqrt{\frac{1 - \cos(\alpha)}{1 + \cos(\alpha)}} \\
+                &= \frac{sin(\alpha)}{1 + \cos(\alpha)} \\
+                &= \frac{1 - \cos(\alpha)}{sin(\alpha)}
+        \end{split}
+        \end{equation} 
+    $$
+          </div>
+        </div>        <div boxed macro="note">
+          <h3 id="14181341509066792500">Power-Reducing Identities
+          </h3>
+          <div latex="block" macro="texblock">$$
+         \begin{equation}
+        \begin{split}
+            \sin^2(\alpha) &= \frac{1 - \cos(2\alpha)}{2} \\
+            &\\
+            \cos^2(\alpha) &= \frac{1 + \cos(2\alpha)}{2} \\
+            &\\
+            \tan^2(\alpha) &= \frac{1 - \cos(2\alpha)}{1 + \cos(2\alpha)}
+        \end{split}
+        \end{equation} 
+    $$
+          </div>
+          <hr></hr>
+          <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+        \sin\alpha\cdot\cos\alpha &= \frac{1}{2}\sin(2\alpha)
+    
+\end{split}
+\end{equation}$$
+          </div>
+        </div>        <div macro="note" boxed>
+          <h3 id="3873405068954633645">Product-to-Sum Identities
+          </h3>
+          <div macro="texblock" latex="block">$$
+        \begin{equation}
+        \begin{split}
+            \sin(\alpha) \cdot \cos(\beta) &= \frac{1}{2} \Big[ \sin(\alpha + \beta) + \sin(\alpha - \beta) \Big] \\
+            \cos(\alpha) \cdot \sin(\beta) &= \frac{1}{2} \Big[ \sin(\alpha + \beta) - \sin(\alpha - \beta) \Big] \\
+            \cos(\alpha) \cdot \cos(\beta) &= \frac{1}{2} \Big[ \cos(\alpha + \beta) + \cos(\alpha - \beta) \Big] \\
+            \sin(\alpha) \cdot \sin(\beta) &= \frac{1}{2} \Big[ \cos(\alpha - \beta) - \cos(\alpha + \beta) \Big]
+        \end{split}
+        \end{equation}
+    $$
+          </div>
+        </div>        <div macro="note" boxed>
+          <h3 id="12804923929127437086">Sum-to-Product-Identities
+          </h3>
+          <div latex="block" macro="texblock">$$
+         \begin{equation}
+        \begin{split}
+            \sin(x) + \sin(y) &= 2 \cdot \sin\left( \frac{x + y}{2} \right) \cdot \cos\left( \frac{x - y}{2} \right) \\
+            \cos(x) + \cos(y) &= 2 \cdot \cos\left( \frac{x + y}{2} \right) \cdot \cos\left( \frac{x - y}{2} \right) \\
+            \sin(x) - \sin(y) &= 2 \cdot \cos\left( \frac{x + y}{2} \right) \cdot \sin\left( \frac{x - y}{2} \right) \\
+            \cos(x) - \cos(y) &= -2 \sin \cos\left( \frac{x + y}{2} \right) \cdot \sin\left( \frac{x - y}{2} \right)
+        \end{split}
+        \end{equation} 
+    $$
+          </div>
+        </div>
+      </div>      <h1 id="14510349134696641349">Limits
+      </h1>      <div macro="layout" columns="2" cols="2">
+        <div macro="note" boxed>
+          <h2 id="10346731368322095661">L’Hospital’s Rule
+          </h2>
+          <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+
+            \lim_{x\to{a}}\frac{f(x)}{g(x)} &= \lim_{x\to{a}}\frac{f^\prime(x)}{g^\prime(x)}\\
+            \text{if}\;\lim_{x\to{a}}\frac{f(x)}{g(x)} = \frac{0}{0}
+            \;&\text{or}\;\lim_{x\to{a}}\frac{f(x)}{g(x)} = \frac{\infty}{\infty}
+        
+\end{split}
+\end{equation}$$
+          </div>
+          <p>In other words, if L’Hospital’s Rule applies to indeterminate forms.</p>
+        </div>
+      </div>      <h2 id="2539671689892468997">Limit Laws
+      </h2>      <div cols="3" macro="layout" columns="3">
+        <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+\lim_{x \to a} \Big[ f(x) + g(x) \Big] &= \lim_{x \to a} f(x) + \lim_{x \to a} g(x)
+\end{split}
+\end{equation}$$
+        </div>
+        <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+\lim_{x \to a} \Big[ f(x) - g(x) \Big] &= \lim_{x \to a} f(x) - \lim_{x \to a} g(x)
+\end{split}
+\end{equation}$$
+        </div>
+        <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+\lim_{x \to a} \Big[ c \cdot f(x) \Big] &= c \cdot \lim_{x \to a} f(x)
+\end{split}
+\end{equation}$$
+        </div>
+        <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+\lim_{x \to a} \Big[ f(x) \cdot g(x) \Big] &= \lim_{x \to a} f(x) \cdot \lim_{x \to a} g(x)
+\end{split}
+\end{equation}$$
+        </div>
+        <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+\lim_{x \to a} \frac{f(x)}{g(x)} &= \frac{\lim_{x \to a} f(x)}{\lim_{x \to a}g(x)} \; \text{if} \lim_{x \to a}g(x) \neq 0
+\end{split}
+\end{equation}$$
+        </div>
+        <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+\lim_{x \to a} \Big[ f(x) \Big]^n = \Big[ \lim_{x \to a} f(x) \Big]^n\;\text{if}\;n\in\mathbb{Z}^+
+\end{split}
+\end{equation}$$
+        </div>
+        <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+\underbrace{\lim_{x \to a} \sqrt[n]{f(x)} = \sqrt[n]{\lim_{x \to a} f(x)}\;\text{if}\;n\in\mathbb{Z}^+}_{\text{if $n$ is even we assume $\lim_{x \to a} f(x) > 0$}}
+\end{split}
+\end{equation}$$
+        </div>
+        <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+\lim_{x\to{c}}\, \left(f \circ g\right)(x) &= f\left(\lim_{x\to{c}}\, g(x)\right)
+\end{split}
+\end{equation}$$
+        </div>
+      </div>      <h2 id="8026888645820366155">Limit Formulas
+      </h2>      <div cols="3" columns="3" macro="layout">
+        <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+\lim_{x\to\infty} \frac{1}{x^r} &= 0\;\text{if $r > 0$}
+\end{split}
+\end{equation}$$
+        </div>
+      </div>      <h2 id="14799266829837659337">Growth Rates
+      </h2>      <ol>
+        <li><u>Factorial functions</u> grow faster than <u>exponential functions</u>.
+        </li>
+        <li><u>Exponential functions</u> grow faster than <u>polynomials</u>.
+        </li>
+      </ol>      <h1 id="12218347638776391369">Calculus
+      </h1>      <div macro="note">
+        <h2 id="14965673189004371283">Derivative Tables
+        </h2>
+        <div columns="3" cols="3" macro="layout" boxed>
+          <div boxed-child>
+            <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+            \delta\sin(x) &= \cos(x) \\
+            \delta\csc(x) &= -\cot(x) \cdot \csc(x)
+        
+\end{split}
+\end{equation}$$
+            </div>
+          </div>
+          <div boxed-child>
+            <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+            \delta\cos(x) &= -\sin(x) \\
+            \delta\sec(x) &= \tan(x) \cdot \sec(x)
+        
+\end{split}
+\end{equation}$$
+            </div>
+          </div>
+          <div boxed-child>
+            <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+            \delta\tan(x) &= \sec^2(x) \\
+            \delta\cot(x) &= -\csc^2(x)
+        
+\end{split}
+\end{equation}$$
+            </div>
+          </div>
+        </div>
+        <div columns="3" cols="3" boxed macro="layout">
+          <div boxed-child>
+            <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+            \delta\sin^{-1}(x) &= \frac{1}{\sqrt{1 - x^2}}
+        
+\end{split}
+\end{equation}$$
+            </div>
+          </div>
+          <div boxed-child>
+            <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+
+            \delta\cos^{-1}(x) &= -\frac{1}{\sqrt{1 - x^2}}
+        
+\end{split}
+\end{equation}$$
+            </div>
+          </div>
+          <div boxed-child>
+            <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+            \delta\tan^{-1}(x) &= \frac{1}{1 + x^2}
+        
+\end{split}
+\end{equation}$$
+            </div>
+          </div>
+        </div>
+      </div>      <div macro="note">
+        <h2 id="13997959368136373590">Integration Tables
+        </h2>
+        <div columns="3" cols="3" macro="layout" boxed>
+          <div boxed-child>
+            <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+            \int\sin(x)\;\mathrm{d}x &= -\cos x \\
+            \int\csc^2(x)\;\mathrm{d}x &= -\cot x \\
+            \int\csc(x)\cdot\cot(x)\;\mathrm{d}x &= -\csc x \\
+            \int\csc(x)\;\mathrm{d}x &= \ln\left|\csc x - \cot x\right| \\
+            \int\sinh(x)\;\mathrm{d}x &= \cosh(x) \\
+        
+\end{split}
+\end{equation}$$
+            </div>
+          </div>
+          <div boxed-child>
+            <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+            \int\cos(x)\;\mathrm{d}x &= \sin x \\
+            \int\sec^2(x)\;\mathrm{d}x &= \tan x \\
+            \int\sec(x)\cdot\tan(x)\;\mathrm{d}x &= \sec x \\
+            \int\sec(x)\;\mathrm{d}x &= \ln\left|\sec x + \tan x\right| \\
+            \int\cosh(x)\;\mathrm{d}x &= \sinh(x) \\
+        
+\end{split}
+\end{equation}$$
+            </div>
+          </div>
+          <div boxed-child>
+            <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+            \int\tan(x)\;\mathrm{d}x &= \ln| \sec x | \\
+            \int\cot(x)\;\mathrm{d}x &= \ln| \sin x | \\
+        
+\end{split}
+\end{equation}$$
+            </div>
+          </div>
+        </div>
+        <div boxed columns="3" cols="3" macro="layout">
+          <div boxed-child>
+            <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+            \int b^x\;\mathrm{d}x &= \frac{b^x}{\ln(b)}
+        
+\end{split}
+\end{equation}$$
+            </div>
+          </div>
+          <div boxed-child>
+            <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+            \int\frac{1}{x^2 + a^2}\;\mathrm{d}x &= \frac{1}{a}\tan^{-1}\left(\frac{x}{a}\right)
+        
+\end{split}
+\end{equation}$$
+            </div>
+          </div>
+          <div boxed-child>
+            <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+
+            \int\frac{1}{x^2 - a^2}\;\mathrm{d}x &= \frac{1}{2a}\ln\left|\frac{x-a}{x+a}\right|
+        
+\end{split}
+\end{equation}$$
+            </div>
+          </div>
+          <div boxed-child>
+            <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+            \int\frac{1}{\sqrt{a^2 - x^2}}\;\mathrm{d}x &= \sin^{-1}\left(\frac{x}{a}\right),\;a>0
+        
+\end{split}
+\end{equation}$$
+            </div>
+          </div>
+          <div boxed-child>
+            <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+            \int\frac{1}{\sqrt{x^2 \pm a^2}}\;\mathrm{d}x &= \ln\left|x+\sqrt{x^2\pm a^2}\right|
+        
+\end{split}
+\end{equation}$$
+            </div>
+          </div>
+        </div>
+      </div>      <div macro="note" boxed>
+        <h2 id="16739759467061434076">Riemann Sums
+        </h2>
+        <p center>Given</p>
+        <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+        A &= \int_{a}^{b} f(x) = \lim_{n\to\infty}\sum_{i=1}^{n} \Delta{x} \cdot f(x) \;\text{where}\;
+            \left\{\begin{array}{ll}
+                \Delta{x} = \frac{b - a}{n}
+            \end{array}\right.
+    
+\end{split}
+\end{equation}$$
+        </div>
+        <div cols="2" columns="2" macro="layout">
+          <div boxed macro="note">
+            <h3 id="17211247399661777919">Left Riemann Sum
+            </h3>
+            <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+
+                A &= \int_{a}^{b} f(x) \;\mathrm{d}x \approx L_n = \sum_{i = 0}^{n-1}\, \Delta{x}\cdot f\left(a + i\cdot\Delta{x}\right)
+            
+\end{split}
+\end{equation}$$
+            </div>
+          </div>
+          <div macro="note" boxed>
+            <h3 id="12270568974922804108">Right Riemann Sum
+            </h3>
+            <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+
+                A &= \int_{a}^{b} f(x) \;\mathrm{d}x \approx R_n = \sum_{i = 1}^{n}\, \Delta{x}\cdot f\left(a + i\cdot\Delta{x}\right)
+            
+\end{split}
+\end{equation}$$
+            </div>
+          </div>
+        </div>
+        <div boxed macro="note">
+          <h3 id="554706099432351522">Midpoint Riemann Sum
+          </h3>
+          <div latex="block" macro="texblock">$$
+            \newcommand{\generalFormat}{
+                \sum_{\small{\cdots}}^{\small{\cdots}}\, \Delta{x}\cdot f\left(a + \text{“avg. of $x_i$ and $x_{i-1}$”} \cdot \Delta{x}\right)
+            }
+            \newcommand{\SigmaExampleOne}{
+                \sum_{i = 1}^{n}\, \Delta{x}\cdot f\left(a + \frac{x_{i - 1} + x_i}{2} \cdot \Delta{x}\right)
+            }
+            \newcommand{\SigmaExampleTwo}{
+                \sum_{i = 0}^{n-1}\, \Delta{x}\cdot f\left(a + \frac{x_{i + 1} + x_i}{2} \cdot \Delta{x}\right)
+            }
+            \begin{equation}
+            \begin{split}
+                A = \int_{a}^{b} f(x) \;\mathrm{d}x &\approx \generalFormat\\
+                    &\approx \SigmaExampleOne\\
+                    \text{or alternatively}&\\
+                    A &\approx \SigmaExampleTwo
+            \end{split}
+            \end{equation}
+        $$
+          </div>
+          <hr></hr>
+          <p center>We can also do away with the index notation and simplify things.</p>
+          <div latex="block" macro="texblock">$$
+            \newcommand{\SigmaExampleOne}{
+                \sum_{i = 1}^{n}\, \Delta{x}\cdot f\left(a + \frac{(i - 1) + i}{2} \cdot \Delta{x}\right) =
+                \sum_{i = 1}^{n}\, \Delta{x}\cdot f\left(a + \frac{2i - 1}{2} \cdot \Delta{x}\right)
+            }
+            \newcommand{\SigmaExampleTwo}{
+                \sum_{i = 0}^{n-1}\, \Delta{x}\cdot f\left(a + \frac{(i + 1) + i}{2} \cdot \Delta{x}\right) =
+                \sum_{i = 0}^{n-1}\, \Delta{x}\cdot f\left(a + \frac{2i + 1}{2} \cdot \Delta{x}\right)
+            }
+            \begin{equation}
+            \begin{split}
+                A = \int_{a}^{b} f(x) \;\mathrm{d}x
+                    &\approx \SigmaExampleOne\\
+                    &\approx \SigmaExampleTwo
+            \end{split}
+            \end{equation}
+        $$
+          </div>
+        </div>
+        <div macro="note" boxed>
+          <h3 id="9855445493773158245">Trapezoidal Riemann Sum
+          </h3>
+          <div latex="block" macro="texblock">$$
+            \newcommand{\leftSum}{
+                \sum_{i = 0}^{n-1}\, \Delta{x}\cdot f\left(a + i\cdot\Delta{x}\right)
+            }
+            \newcommand{\rightSum}{
+                \sum_{i = 1}^{n}\, \Delta{x}\cdot f\left(a + i\cdot\Delta{x}\right)
+            }
+            \newcommand{\leftSumNoDelta}{
+                \sum_{i = 0}^{n-1}\, f\left(a + i\cdot\Delta{x}\right)
+            }
+            \newcommand{\rightSumNoDelta}{
+                \sum_{i = 1}^{n}\, f\left(a + i\cdot\Delta{x}\right)
+            }
+            \begin{equation}
+            \begin{split}
+                A = \int_{a}^{b} f(x) \;\mathrm{d}x &\approx T_n\\
+                    &= \overbrace{\frac{1}{2}\left(L_n + R_n\right)}^{\text{i.e. avg. of two sums}}\\
+                    &= \frac{1}{2}\left(\leftSum + \rightSum\right)\\
+                    &= \frac{\Delta{x}}{2}\left(\leftSumNoDelta + \rightSumNoDelta\right)
+            \end{split}
+            \end{equation}
+        $$
+          </div>
+          <hr></hr>
+          <div macro="note">
+            <p center>Note that the formula for a trapezoid is <span latex="inline" macro="tex">\(A = h\cdot\frac{a + b}{2}\)</span>.</p><img ss.img.processed width="200px" src="https://colbyn.github.io/school-notes-spring-2020/ss-data/6723534220764509208.png" center style=";min-width: 0; max-width: 200px; width: 100%;" ss.proc.width></img>
+            <p center>In this case, height corresponds to width of each interval.</p>
+          </div>
+        </div>
+        <div boxed macro="note">
+          <h3 id="554714459210936594">Simpson's Rule
+          </h3>
+          <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+            A = \int_{a}^{b} f(x) \;\mathrm{d}x &\approx S_n\;\text{where}\;
+                    \left\{\begin{array}{ll}
+                    \begin{split}
+                    n \;&\text{is even}\\
+                    \Delta{x} &= \frac{b - a}{n}\\
+                        x_i &= a + i\Delta{x}\\
+                    \end{split}
+                    \end{array}\right.\\
+                &\approx \frac{\Delta{x}}{3}\left[f(x_0) + 4f(x_1) + 2f(x_2) + 4f(x_3) \cdots f(x_i) \cdots f(x_n)\right]\\
+        
+\end{split}
+\end{equation}$$
+          </div>
+          <hr></hr>
+          <p center>Alternatively</p>
+          <div latex="block" macro="texblock">$$
+            \newcommand{\fourOrTwoLiteral}{
+                {}^4{\mskip -5mu/\mskip -3mu}_2
+            }
+            \newcommand{\fourOrTwo}{
+                \fourOrTwoLiteral
+            }
+            \newcommand{\given}{
+                \;\text{given}\;&
+                \left\{\begin{array}{ll}
+                \begin{split}
+                    n \;&\text{is even}\\
+                    \Delta{x} &= \frac{b - a}{n}\\
+                    x_i &= a + i\Delta{x}\\
+                    \mathrm{start} &= f\left(a + 0\Delta{x}\right) = f(a)\\
+                    \fourOrTwo &= \text{alternate between $4$ and $2$}\\
+                    \mathrm{mid} &= \fourOrTwo f\left(x_i\right)\\
+                    \mathrm{end} &= \text{continue until $2f\left(x_n\right)$ (will always end in $2$)}\\
+                    \mathrm{repeat} &= \mathrm{mid}\;\cdots\;\mathrm{end}
+                \end{split}
+                \end{array}\right.\\
+            }
+            \newcommand{\core}{
+                \frac{\Delta{x}}{3}\left[\mathrm{start\;\cdot\;\mathrm{repeat}}\right]
+            }
+            \begin{equation}
+            \begin{split}
+                \given\\
+                A &= \int_{a}^{b} f(x) \;\mathrm{d}x \approx S_n = \core
+            \end{split}
+            \end{equation}
+        $$
+          </div>
+        </div>
+      </div>      <div macro="layout" columns="2" cols="2">
+        <div macro="note">
+          <h2 id="1123475491895180060">Improper Integrals
+          </h2>
+          <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+
+            \text{Given}&\;L = \int_{a}^{\infty} f(x) \;\mathrm{d}x = \lim_{t\to\infty} \int_{a}^{\infty} f(x) \;\mathrm{d}x = \lim_{t\to\infty} F(x)\\
+            \text{If}&\;L\;\text{“exists”}\;\text{then $L$ is}\;\mathbf{\text{convergent}}\\
+            \text{If}&\;L\;\text{“does not exists”}\;\text{then $L$ is}\;\mathbf{\text{divergent}}
+        
+\end{split}
+\end{equation}$$
+          </div>
+        </div>
+      </div>      <h1 id="248711926375195383">Infinite Sequences and Series
+      </h1>      <h2 id="13154301408868941883">Terminology
+      </h2>      <dl>
+        <dt>Sequence
+        </dt>
+        <dd>A sequence can be thought of as a list of elements with a particular order.
+        </dd>
+        <dt>Monotonically Increasing
+        </dt>
+        <dd>A sequence is said to be monotonically increasing if each term is greater than or equal to the one before it.
+        </dd>
+        <dt>Monotonically Decreasing
+        </dt>
+        <dd>A sequence is monotonically decreasing, if each consecutive term is less than or equal to the previous one.
+        </dd>
+        <dt>Convergence
+        </dt>
+        <dd>
+          <p>An important property of a sequence is <b>convergence</b>. If a sequence converges, it <u>converges to a particular value known as the limit</u>. If a sequence converges to some limit, then it is convergent.</p>
+          <p>A sequence that does not converge is <b>divergent</b>.</p>
+          <div cols="3" columns="3" macro="layout">
+            <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+\underbrace{\lim_{x\to s} f(x) = N\;\;\text{where $N$ is some number}}_{\text{convergent}}
+\end{split}
+\end{equation}$$
+            </div>
+            <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+\underbrace{\lim_{x\to s} f(x) = \pm\,\infty}_{\text{divergent}}
+\end{split}
+\end{equation}$$
+            </div>
+            <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+\underbrace{\lim_{x\to s} f(x)\;\text{does not exist}}_{\text{divergent}}
+\end{split}
+\end{equation}$$
+            </div>
+          </div>
+        </dd>
+        <dd>Convergence sequences are <b>bounded</b>.
+        </dd>
+        <dt>Series
+        </dt>
+        <dd>
+          <div cols="2" macro="layout" columns="2">
+            <div macro="note">
+              <p>A series is, informally speaking, the <u>sum of the terms of a sequence</u>. A series is an expression of the form:</p>
+              <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+S = \sum_{i=1}^{\infty}\,i &= 1 + 2 + 3 \cdots \infty
+\end{split}
+\end{equation}$$
+              </div>
+            </div>
+          </div>
+        </dd>
+        <dd>Order matters! Unlike addition.
+        </dd>
+        <dt>Partial Sums
+        </dt>
+        <dd>
+          <dl>
+            <dt>For example, given
+            </dt>
+            <dd>
+              <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+S_n = \sum{i = 1}^{\infty}\,n_i
+\end{split}
+\end{equation}$$
+              </div>
+            </dd>
+            <dt>Therefore
+            </dt>
+            <dd>
+              <p><span latex="inline" macro="tex">\(S_6\)</span> is the partial sum of the first <span latex="inline" macro="tex">\(6\)</span> elements.</p>
+            </dd>
+          </dl>
+        </dd>
+      </dl>      <h2 id="981834697106483294">Sequence
+      </h2>      <div cols="2" macro="layout" columns="2">
+        <div macro="note" boxed>
+          <h3 id="7184424285819996506">Infinite Sequence
+          </h3>
+          <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+            \text{Given}&\\
+            &S_n = \{a_n\}_{n=1}^{\infty}\\
+            \text{Tests}&\\
+            &\text{If}\;\lim_{n\to\infty}\,S_n \text{“exists”}\;\text{then}\;\mathbf{\text{$S_n$ is convergent}}\\
+            &\text{If}\;\lim_{n\to\infty}\,S_n \text{“does not exists”}\;\text{then}\;\mathbf{\text{$S_n$ is Divergent}}\\
+        
+\end{split}
+\end{equation}$$
+          </div>
+        </div>
+        <div macro="note" boxed>
+          <h3 id="15638919328177538893">Helpful Theorem
+          </h3>
+          <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+
+            \text{If}&\\
+            \lim_{x\to\infty}\,|a_n| &= 0\\
+            \text{Then}&\\
+            \lim_{x\to\infty}\,a_n &= 0\\
+        
+\end{split}
+\end{equation}$$
+          </div>
+        </div>
+        <div boxed macro="note">
+          <h3 id="11366067073507778249">Example
+          </h3>
+          <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+
+        \text{Given}\\
+            S_n &= \{\cos\left(\frac{n\pi}{2}\right)\}\\
+            L &=\lim_{n\to\infty}\,\cos\left(\frac{n\pi}{2}\right)\\
+            &= \cos\left(\lim_{n\to\infty}\,\frac{n\pi}{2}\right) \\
+            &= \cos\left(\infty\right) \\
+            &= \text{undefined} \\
+        \text{Therefore}\\
+        \therefore\;&\text{$S_n$ is Divergent}&
+        
+\end{split}
+\end{equation}$$
+          </div>
+        </div>
+        <div boxed macro="note">
+          <h3 id="17527065491451581016">Example
+          </h3>
+          <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+        \text{Given}\\
+            S_n &= \{\sin\left(\frac{\pi}{n}\right)\}\\
+            L &= \lim_{n\to\infty}\,\sin\left(\frac{\pi}{n}\right)\\
+                &= \sin\left(\lim_{n\to\infty}\,\frac{\pi}{n}\right) \\
+                &= \sin\left(0\right) \\
+                &= 0\\
+        \text{Therefore}\\
+        \therefore\;&\text{$S_n$ is Convergent}
+        
+\end{split}
+\end{equation}$$
+          </div>
+        </div>
+      </div>      <h2 id="16572146730572290166">Series
+      </h2>      <div macro="layout" cols="2" columns="2">
+        <div boxed macro="note">
+          <h3 id="13074098412146270989">Infinite Series
+          </h3>
+          <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+
+            \text{Given}&\\
+            &S_n = \sum_{n = 1}^{\infty}\,a_n\\
+            \text{Tests}&\\
+            &\text{If}\;\lim_{n\to\infty}\,a_n = 0\;\text{then}\;\text{$S_n$ may be $\mathbf{\text{convergent}}$}\\
+            &\text{If}\;\lim_{n\to\infty}\,a_n \neq 0\;\text{then}\;\mathbf{\text{$S_n$ is divergent}}\\
+            &\text{If}\;\lim_{n\to\infty}\,a_n \text{“does not exists”}\;\text{then}\;\mathbf{\text{$S_n$ is divergent}}\\
+        
+\end{split}
+\end{equation}$$
+          </div>
+          <p>Note that the limit of every <b>convergent</b> series is equal to zero. But the inverse isn't always true. If the limit is equal to zero, it <u>may not be convergent</u>.</p>
+          <p>For example, <span macro="tex" latex="inline">\(\sum_{n=1}^\infty \frac{1}{n}\)</span> does diverge; <u>but it's limit is equal to zero</u>.</p>
+          <div macro="note" inline>
+            <p>If the limit is equal to zero; the <u>test is <b>inconclusive</b></u>.</p>
+          </div>
+        </div>
+        <div macro="note" boxed>
+          <h3 id="1836517134334099333">Geometric Series
+          </h3>
+          <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+            \text{Given}&\\
+            &S_n = \sum_{n = 1}^{\infty}\,a_n = \sum_{n = 1}^{\infty}\,a\cdot r^{n - 1}\;\text{where}\;
+                    \left\{\begin{array}{ll}
+                    \begin{split}
+                    a &= a_1\\
+                    r &= \frac{S_2}{S_1}
+                    \end{split}
+                    \end{array}\right.\\
+            \text{Alternatively}&\\
+            &S_n = \sum_{n=0}^{\infty}\,a_n = \sum_{n=0}^{\infty}\,a\cdot r^{n}\\
+            \text{Tests}&\\
+            &\text{If}\;|r|\geq{1}\;\text{then}\;\mathbf{\text{$S_n$ is divergent}}\\
+            &\text{If}\;|r|<1\;\text{then}\;\mathbf{\text{$S_n$ is convergent}}\\
+            \text{Furthermore}&\\
+            &\sum_{n = 1}^{\infty}\,a_n = \sum_{n = 1}^{\infty}\,a\cdot r^{n - 1} = \frac{a}{1 - r}\;\text{for all}\;|r|<1
+        
+\end{split}
+\end{equation}$$
+          </div>
+        </div>
+        <div macro="note" boxed>
+          <h3 id="12115473377553556513">The Integral Test
+          </h3>
+          <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+            &\text{Given}\\
+            &\;\;\;\;a_n = f(n)\;\text{$\forall$n on}\;[1,n)\\
+            &\;\;\;\;S_n = \sum_{n = 1}^{\infty}\,a_n\\
+            &\;\;\;\;F(x) = \int_{1}^{\infty}f(x)\;\mathrm{d}x\\
+            &\text{Where}\\
+            &\;\;\;\;f(x) > 0, \forall\,x\in\,[1, \infty)\\
+            &\;\;\;\;f^\prime(x) < 0, \forall\,x\in\,[1, \infty)\\
+            &\text{Tests}\\
+            &\;\;\;\;\text{If $S_n$ convergent; then $F(x)$ is $\mathbf{convergent}$}\\
+            &\;\;\;\;\text{If $S_n$ divergent; then $F(x)$ is $\mathbf{divergent}$}
+        
+\end{split}
+\end{equation}$$
+          </div>
+          <div macro="note">
+            <h4 id="11129437154659478751">Constraints on <span latex="inline" macro="tex">\([1,n)\)</span>
+            </h4>
+            <ul>
+              <li>Continuous
+              </li>
+              <li>Positive
+              </li>
+              <li>Decreasing (i.e. use derivative test)
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div macro="note" boxed style="display: grid;">
+          <h3 id="6255659939986994911">P-Series -or- Harmonic Series
+          </h3>
+          <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+
+            &\text{Given}\\
+            &\;\;\;\;S_n=\sum_{n=1}^{\infty}\frac{1}{n^p}\\
+            &\text{Tests}\\
+            &\;\;\;\;\text{If $p>1$ then $S_n$ is $\mathbf{convergent}$}\\
+            &\;\;\;\;\text{If $0 < p \leq{1}$ then $S_n$ is $\mathbf{divergent}$}
+        
+\end{split}
+\end{equation}$$
+          </div>
+          <div macro="note" boxed style="align-self: flex-end;">
+            <p>Note: the <u>Harmonic series</u> is the special case where <span macro="tex" latex="inline">\(p=1\)</span></p>
+          </div>
+        </div>
+        <div boxed macro="note">
+          <h3 id="16843630099204728333">Comparison Test
+          </h3>
+          <div latex="block" macro="equation">$$\begin{equation}
+\begin{split}
+
+            &\text{Given}\\
+            &\;\;\;\;A_n = \sum_{n=1}^\infty\,a_n\\
+            &\;\;\;\;B_n = \sum_{n=1}^\infty\,b_n\\
+            &\text{Where}\\
+            &\;\;\;\;a_n, b_n \geq 0\\
+            &\;\;\;\;a_n \leq b_n\\
+            &\text{Tests}\\
+            &\;\;\;\;\text{If $B_n$ converges $\implies A_n$ converges}\\
+            &\;\;\;\;\text{If $A_n$ diverges $\implies B_n$ diverges}\\
+        
+\end{split}
+\end{equation}$$
+          </div>
+        </div>
+        <div macro="note" boxed>
+          <h3 id="1504073735857569293">Limit Comparison Test
+          </h3>
+          <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+
+            &\text{Given}\\
+            &\;\;\;\;A_n = \sum_{n=1}^\infty\,a_n\\
+            &\;\;\;\;B_n = \sum_{n=1}^\infty\,b_n\\
+            &\;\;\;\; L = \lim_{n\to\infty}\frac{a_n}{b_n}\\
+            &\text{Where}\\
+            &\;\;\;\;L > 0,\;L \neq \pm \infty\\
+            &\text{Therefore either both converge or diverge}\\
+            &\;\;\;\;\text{$A_n$ converges $\Longleftrightarrow B_n$ converges}\\
+            &\;\;\;\;\text{$A_n$ diverges $\Longleftrightarrow B_n$ diverges}
+        
+\end{split}
+\end{equation}$$
+          </div>
+          <div macro="note">
+            <h4 id="10389207624133305217">Warning
+            </h4>
+            <ul>
+              <li>If <span latex="inline" macro="tex">\(L > 0\)</span>, this only means that the limit comparison test <u>can be used</u>. You <u>still need to determine if either</u><span macro="tex" latex="inline">\(A_n\)</span> or <span latex="inline" macro="tex">\(B_b\)</span> converges or diverges.
+              </li>
+              <li>Therefore, this does not apply to any arbitrary rational function.
+              </li>
+            </ul>
+          </div>
+          <div macro="note">
+            <h4 id="748577482064616105">Notes
+            </h4>
+            <ul>
+              <li>For many series, we find a suitable comparison, <span latex="inline" macro="tex">\(B_n\)</span>, by keeping only the <u>highest powers in the numerator and denominator</u> of <span macro="tex" latex="inline">\(A_n\)</span>.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div boxed macro="note">
+          <h3 id="8613057751481400992">Estimating Infinite Series
+          </h3>
+          <div macro="equation" latex="block">$$\begin{equation}
+\begin{split}
+
+            &\text{For some infinite sum “$S$”}\\
+            &\;\;\;\;S = \text{“infinite sum we will estimate”}\\
+            &\text{Given}\\
+            &\;\;\;\;S_k + \int_{k+1}^\infty f(x)\mathrm{d}x\leq\,S\leq\,S_k + \int_{k}^\infty f(x)\mathrm{d}x\\
+            &\text{Where}\\
+            &\;\;\;\;\text{$S$ is $\mathbf{\text{convergent}}$}\\
+            &\;\;\;\;\text{$\forall x$ in $f(x)$, f is $\mathbf{\text{continuous}}$}\\
+            &\;\;\;\;\text{$\forall x$ in $f(x)$, f is $\mathbf{\text{positive}}$}\\
+            &\;\;\;\;\text{$\forall x$ in $f(x)$, f is $\mathbf{\text{decreasing}}$}\\
+            &\;\;\;\;\text{$\forall x$ in $f(x)$, $\mathbf{x \geq k}$}\\
+            &\text{Or alternatively}\\
+            &\;\;\;\;\int_{k+1}^\infty f(x)\mathrm{d}x \leq S - S_k \leq\ \int_{k}^\infty f(x)\mathrm{d}x\\
+            &\text{Step #$1$}\\
+            &\;\;\;\;\text{set value for $k$}\\
+            &\text{Step #2, evaluate the following}\\
+            &\;\;\;\;\text{lower} = S_k + \int_{k+1}^\infty f(x)\mathrm{d}x\\
+            &\;\;\;\;\text{upper} = S_k + \int_{k}^\infty f(x)\mathrm{d}x\\
+            &\text{Therefore}\\
+            &\;\;\;\;\therefore\;\underbrace{\text{lower}\;\leq\,S\leq\;\text{upper}}_{\text{this is our estimate}}\\
+        
+\end{split}
+\end{equation}$$
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
