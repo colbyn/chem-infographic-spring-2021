@@ -14,10 +14,14 @@ table {
     align-self: center;
     margin: 0 auto;
     font-weight: 300;
+    width: 100%;
 }
 th, td {
-    border: 1px solid black;
     padding: 4px;
+}
+
+table, th, td {
+    border: 1px solid #e87703;
 }
 
 img {
