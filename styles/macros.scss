@@ -191,6 +191,7 @@
     padding: 0;
     padding-right: 8px;
     font-weight: 100;
+    text-align: end;
 }
 [macro='note'][qa] > div[answer] h2 {
     color: #656363;
@@ -213,6 +214,21 @@
 }
 [macro='note'][qa] > div[answer] p[credit] a {
     font-weight: 100;
+    font-size: 0.9em;
+}
+[macro='note'][qa] > div[answer] p[credit][source] {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    align-items: center;
+    justify-content: space-between;
+}
+[macro='note'][qa] > div[answer] p[credit][source] > span[source] {
+    border-right: 1px solid #ccc;
+    padding: 3px;
+}
+[macro='note'][qa] > div[answer] p[credit][source] > :last-child {
+    padding: 3px;
 }
 [macro='note'][qa] > div[answer][column] {
     display: flex;
